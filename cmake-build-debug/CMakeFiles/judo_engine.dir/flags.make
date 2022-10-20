@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/squin/programming/judo_engine/.
+CXX_INCLUDES = -I/home/squin/programming/JudoEngine/.
 
-CXX_FLAGS = -g -fdiagnostics-color=always
+CXX_FLAGS = -g -fdiagnostics-color=always -std=gnu++14
 

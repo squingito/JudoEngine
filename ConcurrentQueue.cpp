@@ -103,10 +103,11 @@ qnode<T> *ConcurrentQueue<T>::dump(int32_t *) {
     m_size = 0;
     return out;
 }
-
+/*
 int main() {
     ConcurrentQueue<int>* a = new ConcurrentQueue<int>;
     int b = 7;
     a->enqueue(&b);
     delete a;
 }
+*/

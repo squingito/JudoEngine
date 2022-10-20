@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <mutex>
-
+#include <arpa/inet.h>
 
 
 struct ssl_node {
@@ -69,5 +69,9 @@ void dstr_pollfd(void* in) {
     struct pollfd* to_dstr = (struct pollfd*) in;
     delete to_dstr;
 }
+
+//void read_ip(std::ofstream* t_stream, void* data) {
+//    *t_stream << inet_ntoa(((struct sockaddr_in*) data)->sin_addr);
+//}
 
 #endif //SSL_SERVER_SSL_NODE_H

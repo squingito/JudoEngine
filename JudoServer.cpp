@@ -13,6 +13,15 @@ namespace judo {
         m_server_cert_file = nullptr;
         m_server_private_key_file = nullptr;
         m_buffer_size = 1024;
+        char dir[10];
+        char ext[4];
+        strcpy(dir, "Judo_Logs");
+        strcpy(ext, ".jd");
+        dir[9] = '\0';
+        ext[3] = '\0';
+
+        logger = new LoggyMcLogFace(dir, ext);
+        //logger->addInterpreter('a', read_ip);
         SSL_load_error_strings();
         OpenSSL_add_all_algorithms();
     }
@@ -52,6 +61,7 @@ namespace judo {
     int32_t JudoServer::judoMakeServerSock_() {
         struct sockaddr_in test = {0};
         if (test.sin_addr.s_addr == m_list_sock_addr.sin_addr.s_addr && test.sin_port == m_list_sock_addr.sin_port) {
+            logger->log("Server failed to open server sock", nullptr, 0);
             return JUDO_NO_SERVER_SOCK_ADDR;
         }
         m_server_list_sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -62,6 +72,7 @@ namespace judo {
         mode |= JUDO_MODE_SERVER_SOCK;
         struct pollfd new_pollfd = {m_server_list_sock, POLLIN, 0};
         m_ssl_nodes->add(&new_pollfd, &m_server_list_sock_node);
+        logger->log("Server socket successfully opened", nullptr, 0);
         return JUDO_SUCCESS;
     }
 
@@ -346,8 +357,8 @@ namespace judo {
 // server test mode (accept clients)
 /*
 int main() {
-    char cert[] = "/home/squin/programming/cert.pem";
-    char key[] = "/home/squin/programming/key.pem";
+    char cert[] = "/home/squin/programming/cert/cert.pem";
+    char key[] = "/home/squin/programming/cert/key.pem";
     struct sockaddr_in addr = {0};
     addr.sin_addr.s_addr = INADDR_ANY;
     addr.sin_port = htons(8080);
@@ -363,8 +374,8 @@ int main() {
 // client test mode (connect to remote host)
 /*
 int main() {
-    char cert[] = "/home/squin/programming/cert.pem";
-    char key[] = "/home/squin/programming/key.pem";
+    char cert[] = "/home/squin/programming/certs/cert.pem";
+    char key[] = "/home/squin/programming/certs/key.pem";
     struct sockaddr_in addr = {0};
     addr.sin_addr.s_addr = INADDR_ANY;
     addr.sin_port = htons(8080);

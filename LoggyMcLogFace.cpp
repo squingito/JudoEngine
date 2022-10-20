@@ -5,6 +5,9 @@
 #include <cstring>
 #include <sys/stat.h>
 #include <iostream>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+
 #include "LoggyMcLogFace.hpp"
 
 LoggyMcLogFace::LoggyMcLogFace(char* t_log_dir, char* t_extention) {
@@ -91,13 +94,21 @@ int32_t LoggyMcLogFace::log(char* t_str, void** t_values, int32_t t_num_values) 
 void pirnt(std::ofstream* a, void* in) {
     *a << *((int*) in);
 }
-/*
+
+void read_ip(std::ofstream* t_stream, void* data) {
+    struct sockaddr_in* thing = (struct sockaddr_in*) data;
+    *t_stream << inet_ntoa(thing->sin_addr);
+}
+
+
 int main() {
     int u = 7;
+    struct sockaddr_in a = {0};
+    a.sin_addr.s_addr = htonl(0x88888888);
 
-    void * ptr = ((int*) &u);
+    void * ptr = &a;
     LoggyMcLogFace* thing = new LoggyMcLogFace("brungus", ".jr");
-    thing->addInterpreter('a', pirnt);
+    thing->addInterpreter('a', read_ip);
 
     thing->log("hello there -/%a", &ptr, 1);
     thing->log("hello there -/%a", &ptr, 1);
@@ -106,4 +117,3 @@ int main() {
 
     delete thing;
 }
- */

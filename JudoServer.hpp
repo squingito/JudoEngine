@@ -17,7 +17,7 @@
 #include <poll.h>
 
 #include "DualDynamicArray.cpp"
-
+#include "LoggyMcLogFace.hpp"
 #include "ssl_node.hpp"
 
 #define JUDO_BUFFER_SIZE 12;
@@ -83,6 +83,8 @@ namespace judo {
     private:
         DualDynamicArray<struct pollfd, struct ssl_node*>* m_ssl_nodes = nullptr;
         //stores information on all sockets
+
+        LoggyMcLogFace* logger = nullptr;
 
         int32_t m_server_list_sock = 0;
         struct ssl_node* m_server_list_sock_node = nullptr;
