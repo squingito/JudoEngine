@@ -2,7 +2,6 @@
 // Created by squin on 10/13/2022.
 //
 
-#include <cstring>
 #include "JudoServer.hpp"
 
 namespace judo {
@@ -24,14 +23,10 @@ namespace judo {
 
     JudoServer::~JudoServer() {
         for (int i = m_ssl_nodes->getSize() - 1; i >= 0 ; i--) {
-            if (m_server_list_sock_node->fp != ((m_ssl_nodes->getFromFirstByIndex(i))->fd)) {
-                dstr_ssl_node(*m_ssl_nodes->getFromSecondByIndex(i));
+                struct ssl_node* bruh = *m_ssl_nodes->getFromSecondByIndex(i);
+                dstr_ssl_node(bruh);
                 struct pollfd test = *m_ssl_nodes->getFromFirstByIndex(i);
                 m_ssl_nodes->remove(&test);
-            }
-        }
-        if (m_server_list_sock_node != nullptr) {
-            dstr_ssl_node(m_server_list_sock_node);
         }
         delete m_ssl_nodes;
         close(m_server_list_sock);
@@ -164,7 +159,17 @@ namespace judo {
         }
         struct pollfd new_pollfd = {new_node->fp, POLLIN, 0};
         m_ssl_nodes->add(&new_pollfd, &new_node);
+        buffer[0] = 'J';
+        buffer[1] = 'a';
+        buffer[2] = 'J';
+        buffer[3] = 'a';
+        buffer[4] = 'J';
+        buffer[5] = 'a';
+        buffer[6] = '\0';
+
+        this->judoSend_(new_node, buffer, m_buffer_size);
         delete[] buffer;
+        return 0;
     }
 
     int32_t JudoServer::judoSocketConnect_(struct sockaddr_in* t_addr, int32_t* t_fp_out) {
@@ -236,6 +241,10 @@ namespace judo {
         }
         struct pollfd new_pollfd = {new_node->fp, POLLIN, 0};
         m_ssl_nodes->add(&new_pollfd, &new_node);
+        bytes_read = read(new_node->fp, buffer, m_buffer_size);
+        BIO_write(new_node->read_bio, buffer, bytes_read);
+        SSL_read(new_node->ssl, buffer, m_buffer_size);
+
         buffer[0] = 'J';
         buffer[1] = 'e';
         buffer[2] = 'J';
@@ -243,24 +252,20 @@ namespace judo {
         buffer[4] = 'J';
         buffer[5] = 'e';
         buffer[6] = '\0';
-
-
-
         this->judoSend_(new_node, buffer, m_buffer_size);
         delete[] buffer;
-        close(new_node->fp);
         return JUDO_SUCCESS;
     }
 
     int32_t JudoServer::judoSend_(struct ssl_node* t_node, char* t_buffer, int32_t t_size) {
-        int32_t str_len  = strlen(t_buffer) + 1;
+        int32_t str_len = strlen(t_buffer) + 1;
 
         int32_t bytes_to_write = str_len;
-        if (t_node->mode & (JUDO_CON_CLIENT_CERTS | JUDO_CON_SERVER_CERTS)) {
+        if (t_node->mode & (JUDO_CON_SERVER_CERTS | JUDO_CON_CLIENT_CERTS)) {
             SSL_write(t_node->ssl, t_buffer, str_len);
             bytes_to_write = BIO_read(t_node->write_bio, t_buffer, t_size);
-
         }
+
         write(t_node->fp, t_buffer, bytes_to_write);
         return 0;
 
@@ -288,16 +293,16 @@ namespace judo {
         m_active = true;
         char* buffer = new char[m_buffer_size];
         int a = 0;
-        while(a != 10) {
+        while(a != 9) {
             struct pollfd* poll_array = m_ssl_nodes->getFirstArray();
             struct ssl_node** node_array = m_ssl_nodes->getSecondArray();
-
             int32_t array_size = m_ssl_nodes->getSize();
 
 
-            int32_t sockets_to_handel = poll(poll_array, array_size, 100);
+            int32_t sockets_to_handel = poll(poll_array, array_size, 1000);
             int32_t index = 0;
             while (sockets_to_handel != 0) {
+                array_size = m_ssl_nodes->getSize();
                 struct pollfd current_poll = poll_array[index];
                 struct ssl_node* current_node = node_array[index];
                 if (current_poll.revents & POLLIN) {
@@ -308,7 +313,7 @@ namespace judo {
                     } else {
                         int32_t bytes_read = read(current_poll.fd, buffer, m_buffer_size);
                         if (bytes_read <= 0) {
-
+                            std::cout << index << "\n" << std::flush;
                             std::cout << "JUDO: Disconnecting Client " << current_node->fp << "\n" << std::flush;
                             close(current_node->fp);
                             dstr_ssl_node(current_node);
@@ -326,7 +331,10 @@ namespace judo {
                     sockets_to_handel -= 1;
                     poll_array[index].revents = 0;
                 }
-
+                if (index == array_size - 1) {
+                    poll_array[index].revents = 0;
+                    sockets_to_handel = 0;
+                }
                 index++;
 
             }
@@ -345,14 +353,15 @@ int main() {
     addr.sin_port = htons(8080);
     addr.sin_family = AF_INET;
     judo::JudoServer* a = new judo::JudoServer(&addr, cert, key);
+    a->judoServerRequireCerts();
     a->run();
     delete a;
 }
- */
+*/
 
 
 // client test mode (connect to remote host)
-
+/*
 int main() {
     char cert[] = "/home/squin/programming/cert.pem";
     char key[] = "/home/squin/programming/key.pem";
@@ -360,8 +369,10 @@ int main() {
     addr.sin_addr.s_addr = INADDR_ANY;
     addr.sin_port = htons(8080);
     addr.sin_family = AF_INET;
-    judo::JudoServer* a = new judo::JudoServer();
+    judo::JudoServer *a = new judo::JudoServer();
     a->judoConnect_(&addr, cert, key, 0x01);
+    a->run();
     delete a;
 }
+*/
 

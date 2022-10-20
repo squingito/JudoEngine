@@ -129,6 +129,30 @@ judo_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/build
 .PHONY : judo_engine/fast
 
+ConcurrentQueue.o: ConcurrentQueue.cpp.o
+.PHONY : ConcurrentQueue.o
+
+# target to build an object file
+ConcurrentQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o
+.PHONY : ConcurrentQueue.cpp.o
+
+ConcurrentQueue.i: ConcurrentQueue.cpp.i
+.PHONY : ConcurrentQueue.i
+
+# target to preprocess a source file
+ConcurrentQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.i
+.PHONY : ConcurrentQueue.cpp.i
+
+ConcurrentQueue.s: ConcurrentQueue.cpp.s
+.PHONY : ConcurrentQueue.s
+
+# target to generate assembly for a file
+ConcurrentQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.s
+.PHONY : ConcurrentQueue.cpp.s
+
 DualDynamicArray.o: DualDynamicArray.cpp.o
 .PHONY : DualDynamicArray.o
 
@@ -153,53 +177,53 @@ DualDynamicArray.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.s
 .PHONY : DualDynamicArray.cpp.s
 
-JudoEngine.o: JudoEngine.cpp.o
-.PHONY : JudoEngine.o
+JudoServer.o: JudoServer.cpp.o
+.PHONY : JudoServer.o
 
 # target to build an object file
-JudoEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoEngine.cpp.o
-.PHONY : JudoEngine.cpp.o
+JudoServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoServer.cpp.o
+.PHONY : JudoServer.cpp.o
 
-JudoEngine.i: JudoEngine.cpp.i
-.PHONY : JudoEngine.i
+JudoServer.i: JudoServer.cpp.i
+.PHONY : JudoServer.i
 
 # target to preprocess a source file
-JudoEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoEngine.cpp.i
-.PHONY : JudoEngine.cpp.i
+JudoServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoServer.cpp.i
+.PHONY : JudoServer.cpp.i
 
-JudoEngine.s: JudoEngine.cpp.s
-.PHONY : JudoEngine.s
+JudoServer.s: JudoServer.cpp.s
+.PHONY : JudoServer.s
 
 # target to generate assembly for a file
-JudoEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoEngine.cpp.s
-.PHONY : JudoEngine.cpp.s
+JudoServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/JudoServer.cpp.s
+.PHONY : JudoServer.cpp.s
 
-judo.o: judo.cpp.o
-.PHONY : judo.o
+LoggyMcLogFace.o: LoggyMcLogFace.cpp.o
+.PHONY : LoggyMcLogFace.o
 
 # target to build an object file
-judo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/judo.cpp.o
-.PHONY : judo.cpp.o
+LoggyMcLogFace.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o
+.PHONY : LoggyMcLogFace.cpp.o
 
-judo.i: judo.cpp.i
-.PHONY : judo.i
+LoggyMcLogFace.i: LoggyMcLogFace.cpp.i
+.PHONY : LoggyMcLogFace.i
 
 # target to preprocess a source file
-judo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/judo.cpp.i
-.PHONY : judo.cpp.i
+LoggyMcLogFace.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.i
+.PHONY : LoggyMcLogFace.cpp.i
 
-judo.s: judo.cpp.s
-.PHONY : judo.s
+LoggyMcLogFace.s: LoggyMcLogFace.cpp.s
+.PHONY : LoggyMcLogFace.s
 
 # target to generate assembly for a file
-judo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/judo.cpp.s
-.PHONY : judo.cpp.s
+LoggyMcLogFace.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s
+.PHONY : LoggyMcLogFace.cpp.s
 
 # Help Target
 help:
@@ -210,15 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... judo_engine"
+	@echo "... ConcurrentQueue.o"
+	@echo "... ConcurrentQueue.i"
+	@echo "... ConcurrentQueue.s"
 	@echo "... DualDynamicArray.o"
 	@echo "... DualDynamicArray.i"
 	@echo "... DualDynamicArray.s"
-	@echo "... JudoEngine.o"
-	@echo "... JudoEngine.i"
-	@echo "... JudoEngine.s"
-	@echo "... judo.o"
-	@echo "... judo.i"
-	@echo "... judo.s"
+	@echo "... JudoServer.o"
+	@echo "... JudoServer.i"
+	@echo "... JudoServer.s"
+	@echo "... LoggyMcLogFace.o"
+	@echo "... LoggyMcLogFace.i"
+	@echo "... LoggyMcLogFace.s"
 .PHONY : help
 
 

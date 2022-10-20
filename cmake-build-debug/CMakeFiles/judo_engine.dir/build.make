@@ -69,24 +69,10 @@ include CMakeFiles/judo_engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/judo_engine.dir/flags.make
 
-CMakeFiles/judo_engine.dir/JudoEngine.cpp.o: CMakeFiles/judo_engine.dir/flags.make
-CMakeFiles/judo_engine.dir/JudoEngine.cpp.o: /home/squin/programming/judo_engine/JudoEngine.cpp
-CMakeFiles/judo_engine.dir/JudoEngine.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/judo_engine.dir/JudoEngine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/JudoEngine.cpp.o -MF CMakeFiles/judo_engine.dir/JudoEngine.cpp.o.d -o CMakeFiles/judo_engine.dir/JudoEngine.cpp.o -c /home/squin/programming/judo_engine/JudoEngine.cpp
-
-CMakeFiles/judo_engine.dir/JudoEngine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/judo_engine.dir/JudoEngine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/squin/programming/judo_engine/JudoEngine.cpp > CMakeFiles/judo_engine.dir/JudoEngine.cpp.i
-
-CMakeFiles/judo_engine.dir/JudoEngine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/JudoEngine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/JudoEngine.cpp -o CMakeFiles/judo_engine.dir/JudoEngine.cpp.s
-
 CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o: CMakeFiles/judo_engine.dir/flags.make
 CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o: /home/squin/programming/judo_engine/DualDynamicArray.cpp
 CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o -MF CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o.d -o CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o -c /home/squin/programming/judo_engine/DualDynamicArray.cpp
 
 CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.i: cmake_force
@@ -97,35 +83,65 @@ CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/DualDynamicArray.cpp -o CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.s
 
-CMakeFiles/judo_engine.dir/judo.cpp.o: CMakeFiles/judo_engine.dir/flags.make
-CMakeFiles/judo_engine.dir/judo.cpp.o: /home/squin/programming/judo_engine/judo.cpp
-CMakeFiles/judo_engine.dir/judo.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/judo_engine.dir/judo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/judo.cpp.o -MF CMakeFiles/judo_engine.dir/judo.cpp.o.d -o CMakeFiles/judo_engine.dir/judo.cpp.o -c /home/squin/programming/judo_engine/judo.cpp
+CMakeFiles/judo_engine.dir/JudoServer.cpp.o: CMakeFiles/judo_engine.dir/flags.make
+CMakeFiles/judo_engine.dir/JudoServer.cpp.o: /home/squin/programming/judo_engine/JudoServer.cpp
+CMakeFiles/judo_engine.dir/JudoServer.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/judo_engine.dir/JudoServer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/JudoServer.cpp.o -MF CMakeFiles/judo_engine.dir/JudoServer.cpp.o.d -o CMakeFiles/judo_engine.dir/JudoServer.cpp.o -c /home/squin/programming/judo_engine/JudoServer.cpp
 
-CMakeFiles/judo_engine.dir/judo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/judo_engine.dir/judo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/squin/programming/judo_engine/judo.cpp > CMakeFiles/judo_engine.dir/judo.cpp.i
+CMakeFiles/judo_engine.dir/JudoServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/judo_engine.dir/JudoServer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/squin/programming/judo_engine/JudoServer.cpp > CMakeFiles/judo_engine.dir/JudoServer.cpp.i
 
-CMakeFiles/judo_engine.dir/judo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/judo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/judo.cpp -o CMakeFiles/judo_engine.dir/judo.cpp.s
+CMakeFiles/judo_engine.dir/JudoServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/JudoServer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/JudoServer.cpp -o CMakeFiles/judo_engine.dir/JudoServer.cpp.s
+
+CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o: CMakeFiles/judo_engine.dir/flags.make
+CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o: /home/squin/programming/judo_engine/LoggyMcLogFace.cpp
+CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o -MF CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o.d -o CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o -c /home/squin/programming/judo_engine/LoggyMcLogFace.cpp
+
+CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/squin/programming/judo_engine/LoggyMcLogFace.cpp > CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.i
+
+CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/LoggyMcLogFace.cpp -o CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s
+
+CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o: CMakeFiles/judo_engine.dir/flags.make
+CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o: /home/squin/programming/judo_engine/ConcurrentQueue.cpp
+CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o: CMakeFiles/judo_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o -MF CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o.d -o CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o -c /home/squin/programming/judo_engine/ConcurrentQueue.cpp
+
+CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/squin/programming/judo_engine/ConcurrentQueue.cpp > CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.i
+
+CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/squin/programming/judo_engine/ConcurrentQueue.cpp -o CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.s
 
 # Object files for target judo_engine
 judo_engine_OBJECTS = \
-"CMakeFiles/judo_engine.dir/JudoEngine.cpp.o" \
 "CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o" \
-"CMakeFiles/judo_engine.dir/judo.cpp.o"
+"CMakeFiles/judo_engine.dir/JudoServer.cpp.o" \
+"CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o" \
+"CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o"
 
 # External object files for target judo_engine
 judo_engine_EXTERNAL_OBJECTS =
 
-judo_engine: CMakeFiles/judo_engine.dir/JudoEngine.cpp.o
 judo_engine: CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o
-judo_engine: CMakeFiles/judo_engine.dir/judo.cpp.o
+judo_engine: CMakeFiles/judo_engine.dir/JudoServer.cpp.o
+judo_engine: CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o
+judo_engine: CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o
 judo_engine: CMakeFiles/judo_engine.dir/build.make
 judo_engine: CMakeFiles/judo_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable judo_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable judo_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/judo_engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

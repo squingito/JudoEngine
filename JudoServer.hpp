@@ -7,6 +7,7 @@
 
 #include <sys/socket.h>
 #include <cstdio>
+#include <cstring>
 #include <stdlib.h>
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -30,7 +31,7 @@
 #define JUDO_MODE_CLIENT_CERTS_REQ 0x0008
 
 #define JUDO_READ_CERT_FILE_FAILURE -10
-#define JUDO_READ_KEY_FILE_FAILURE -11;
+#define JUDO_READ_KEY_FILE_FAILURE -11
 
 #define JUDO_NO_SERVER_SOCK_ADDR -20
 #define JUDO_CONNECTION_FAILURE -21

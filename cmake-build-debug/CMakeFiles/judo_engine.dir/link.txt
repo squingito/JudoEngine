@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/judo_engine.dir/JudoEngine.cpp.o CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o CMakeFiles/judo_engine.dir/judo.cpp.o -o judo_engine 
+/usr/bin/c++ -g CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o CMakeFiles/judo_engine.dir/JudoServer.cpp.o CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o -o judo_engine  -lssl -lcrypto 

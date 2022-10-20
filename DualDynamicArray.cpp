@@ -24,7 +24,7 @@ void DualDynamicArray<T,N>::grow() {
         size_t new_cap = 2 * m_cap;
         T* new_first_array = new T[new_cap];
         N* new_second_array = new N[new_cap];
-        for (int32_t i = 0; i < m_size; i++) {
+        for (int32_t i = 0; i < ((int) m_size); i++) {
             new_first_array[i] = m_first_array[i];
             new_second_array[i] = m_second_array[i];
         }
@@ -42,7 +42,7 @@ void DualDynamicArray<T,N>::shrink() {
         size_t new_cap = m_cap / 2;
         T* new_first_array = new T[new_cap];
         N* new_second_array = new N[new_cap];
-        for (int32_t i = 0; i < m_size; i++) {
+        for (int32_t i = 0; i < ((int) m_size); i++) {
             new_first_array[i] = m_first_array[i];
             new_second_array[i] = m_second_array[i];
         }
@@ -64,7 +64,7 @@ void DualDynamicArray<T,N>::add(T* t_thing_one, N* t_thing_two) {
 
 template <typename T, typename N>
 int32_t DualDynamicArray<T,N>::find(T* t_thing_one) {
-    for (int i = 0; i < m_size; i++) {
+    for (int i = 0; i < ((int) m_size); i++) {
         if (m_compare(t_thing_one, &(m_first_array[i])) == 0) return i;
     }
     return -1;
