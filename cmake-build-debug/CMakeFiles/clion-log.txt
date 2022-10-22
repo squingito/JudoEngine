@@ -1,6 +1,6 @@
-cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/squin/programming/JudoEngine -B /home/squin/programming/JudoEngine/cmake-build-debug
--- The C compiler identification is GNU 12.2.0
--- The CXX compiler identification is GNU 12.2.0
+C:\Windows\system32\wsl.exe --distribution Ubuntu-20.04 --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/squin/programming/judo_engine/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/squin/programming/judo_engine -B /home/squin/programming/judo_engine/cmake-build-debug"
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: /usr/bin/cc - skipped
@@ -13,4 +13,4 @@ cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/squin/p
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/squin/programming/JudoEngine/cmake-build-debug
+-- Build files have been written to: /home/squin/programming/judo_engine/cmake-build-debug

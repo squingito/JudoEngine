@@ -10,12 +10,12 @@
 
 #include "LoggyMcLogFace.hpp"
 
-LoggyMcLogFace::LoggyMcLogFace(char* t_log_dir, char* t_extention) {
+LoggyMcLogFace::LoggyMcLogFace(const char* t_log_dir, const char* t_extention) {
     time_t t = time(NULL);
     char file_name[300] = {0};
     strncpy(m_directory, t_log_dir, 255);
 
-    if (strlen(t_extention) <= 3) {
+    if (strlen(t_extention) <= 4) {
         strcpy(m_extention, t_extention);
     } else {
         strcpy(m_extention, ".log");
@@ -42,7 +42,7 @@ void LoggyMcLogFace::addInterpreter(char t_letter, void (*t_function)(std::ofstr
     }
 }
 
-int32_t LoggyMcLogFace::log(char* t_str, void** t_values, int32_t t_num_values) {
+int32_t LoggyMcLogFace::log(const char* t_str, void** t_values, int32_t t_num_values) {
     if (m_valid_functions & LOG_READY) {
         int32_t pos = m_file.tellp();
         int32_t vars_used = 0;
@@ -94,11 +94,7 @@ int32_t LoggyMcLogFace::log(char* t_str, void** t_values, int32_t t_num_values) 
 void pirnt(std::ofstream* a, void* in) {
     *a << *((int*) in);
 }
-
-void read_ip(std::ofstream* t_stream, void* data) {
-    struct sockaddr_in* thing = (struct sockaddr_in*) data;
-    *t_stream << inet_ntoa(thing->sin_addr);
-}
+/*
 
 
 int main() {
@@ -111,9 +107,7 @@ int main() {
     thing->addInterpreter('a', read_ip);
 
     thing->log("hello there -/%a", &ptr, 1);
-    thing->log("hello there -/%a", &ptr, 1);
-    thing->log("hello there -/%a", &ptr, 1);
-    thing->log("hello there -/%a", &ptr, 1);
 
     delete thing;
 }
+*/

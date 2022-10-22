@@ -43,16 +43,13 @@
 			[
 				{
 					"fragment" : "-g -fdiagnostics-color=always"
-				},
-				{
-					"fragment" : "-std=gnu++14"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/squin/programming/JudoEngine/."
+					"path" : "/home/squin/programming/judo_engine/."
 				}
 			],
 			"language" : "CXX",

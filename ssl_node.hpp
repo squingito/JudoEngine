@@ -70,8 +70,19 @@ void dstr_pollfd(void* in) {
     delete to_dstr;
 }
 
-//void read_ip(std::ofstream* t_stream, void* data) {
-//    *t_stream << inet_ntoa(((struct sockaddr_in*) data)->sin_addr);
-//}
+void read_ip(std::ofstream* t_stream, void* data) {
+    struct sockaddr_in* thing = (struct sockaddr_in*) data;
+    *t_stream << inet_ntoa(thing->sin_addr);
+}
+
+void read_port(std::ofstream* t_stream, void* data) {
+    struct sockaddr_in* thing = (struct sockaddr_in*) data;
+    *t_stream << thing->sin_port;
+}
+
+void read_char_buf(std::ofstream* t_stream, void* data) {
+    char* out = (char*) data;
+    *t_stream<< out;
+}
 
 #endif //SSL_SERVER_SSL_NODE_H

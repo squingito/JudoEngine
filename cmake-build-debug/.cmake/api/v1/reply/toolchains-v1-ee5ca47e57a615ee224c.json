@@ -10,15 +10,17 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include",
+						"/usr/lib/gcc/x86_64-linux-gnu/9/include",
 						"/usr/local/include",
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0",
+						"/usr/lib/gcc/x86_64-linux-gnu/9",
+						"/usr/lib/x86_64-linux-gnu",
 						"/usr/lib",
+						"/lib/x86_64-linux-gnu",
 						"/lib"
 					],
 					"linkFrameworkDirectories" : [],
@@ -32,7 +34,7 @@
 					]
 				},
 				"path" : "/usr/bin/cc",
-				"version" : "12.2.0"
+				"version" : "9.4.0"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -49,18 +51,20 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/include/c++/12.2.0",
-						"/usr/include/c++/12.2.0/x86_64-pc-linux-gnu",
-						"/usr/include/c++/12.2.0/backward",
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include",
+						"/usr/include/c++/9",
+						"/usr/include/x86_64-linux-gnu/c++/9",
+						"/usr/include/c++/9/backward",
+						"/usr/lib/gcc/x86_64-linux-gnu/9/include",
 						"/usr/local/include",
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0",
+						"/usr/lib/gcc/x86_64-linux-gnu/9",
+						"/usr/lib/x86_64-linux-gnu",
 						"/usr/lib",
+						"/lib/x86_64-linux-gnu",
 						"/lib"
 					],
 					"linkFrameworkDirectories" : [],
@@ -76,7 +80,7 @@
 					]
 				},
 				"path" : "/usr/bin/c++",
-				"version" : "12.2.0"
+				"version" : "9.4.0"
 			},
 			"language" : "CXX",
 			"sourceFileExtensions" : 

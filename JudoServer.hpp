@@ -29,6 +29,7 @@
 #define JUDO_MODE_SSL_ENABLED 0x0002
 #define JUDO_MODE_SERVER_CERTS_REQ 0x0004
 #define JUDO_MODE_CLIENT_CERTS_REQ 0x0008
+#define JUDO_PASS 0x0010
 
 #define JUDO_READ_CERT_FILE_FAILURE -10
 #define JUDO_READ_KEY_FILE_FAILURE -11
@@ -51,7 +52,6 @@ namespace judo {
     public:
         JudoServer(); //makes default server with no open sockets
         JudoServer(struct sockaddr_in*); //makes default server with an accepting socket
-        JudoServer(struct sockaddr_in*, char*, char*); //makes a default ssl accepting socket
         ~JudoServer(); //destorys JudoServer
 
 
@@ -84,7 +84,7 @@ namespace judo {
         DualDynamicArray<struct pollfd, struct ssl_node*>* m_ssl_nodes = nullptr;
         //stores information on all sockets
 
-        LoggyMcLogFace* logger = nullptr;
+        LoggyMcLogFace* m_event_logger = nullptr;
 
         int32_t m_server_list_sock = 0;
         struct ssl_node* m_server_list_sock_node = nullptr;

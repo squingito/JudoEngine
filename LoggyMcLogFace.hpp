@@ -19,10 +19,10 @@
 
 class LoggyMcLogFace {
 public:
-    LoggyMcLogFace(char*, char* t_extention);
+    LoggyMcLogFace(const char*,const char* t_extention);
     ~LoggyMcLogFace();
     void addInterpreter(char, void (*t_function)(std::ofstream*, void*));
-    int32_t log(char*, void**, int32_t);
+    int32_t log(const char*, void**, int32_t);
 
 private:
     std::ofstream m_file;
