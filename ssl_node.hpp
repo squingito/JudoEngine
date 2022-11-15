@@ -1,13 +1,18 @@
 //
-// Created by squin on 10/3/2022.
+// Created by squin on 10/28/2022.
 //
 
-#ifndef SSL_SERVER_SSL_NODE_H
-#define SSL_SERVER_SSL_NODE_H
+#ifndef JUDO_ENGINE_SSL_NODE_HPP
+#define JUDO_ENGINE_SSL_NODE_HPP
+
 
 #include <iostream>
 #include <mutex>
 #include <arpa/inet.h>
+#include <poll.h>
+#include <openssl/ssl.h>
+#include <openssl/err.h>
+#include "LoggyMcLogFace.hpp"
 
 
 struct ssl_node {
@@ -19,70 +24,49 @@ struct ssl_node {
     struct bio_st* write_bio;
     int32_t fp;
     uint8_t mode;
-	uint8_t buff_size;
-
+    enum sockType {JUDO_LIST, JUDO_OUTGOING, JUDO_INCOMING} type;
 
 };
 
-struct request_node {
-    struct sockaddr_in to_con;
-	char* cert;
-	char* pk;
-    uint32_t fp;
-    uint8_t req;
+enum request {
+    ADD_CONNECT = 1,
+    DISCONNECT = 2,
+    DO_HANDSHAKE = 4
 };
 
-int8_t compare_req_node(void* a, void* b) {
-	return -1;
-}
-
-void req_node_destructor(void* a) {
-	delete ((struct request_node*) a);
-}
-
-int32_t compare_ssl_nodes(struct ssl_node* one, struct ssl_node* two) {
-	std::cout << ((one)->fp) << " " << (two)->fp << "\n";
-    return ((one)->fp) - (((two)->fp));
-}
-
-void print_ssl_node(struct ssl_node* in) {
-    std::cout << in->fp << "\n";
-}
-
-void dstr_ssl_node(struct ssl_node* in) {
-    if (in != nullptr) {
-
-        SSL_free(in->ssl);
-        SSL_CTX_free(in->ssl_ctx);
-
-
-        delete in;
-    }
+struct judo_request_node {
+    struct ssl_node* ssl_info;
+    struct pollfd poll;
+    request req;
 };
 
-int32_t compare_pollfd(struct pollfd* a, struct pollfd* b) {
+struct judo_general_request_node {
+    struct ssl_node* ssl_info;
+    struct pollfd poll;
+    char* msg;
+    int32_t size;
+};
 
-    return a->fd - b->fd;
-}
+void dstr_judo_request_node(struct judo_request_node* in);
 
-void dstr_pollfd(void* in) {
-    struct pollfd* to_dstr = (struct pollfd*) in;
-    delete to_dstr;
-}
+void dstr_judo_general_request_node(struct judo_general_request_node* in);
 
-void read_ip(std::ofstream* t_stream, void* data) {
-    struct sockaddr_in* thing = (struct sockaddr_in*) data;
-    *t_stream << inet_ntoa(thing->sin_addr);
-}
+void dstr_ssl_node(struct ssl_node* in) ;
 
-void read_port(std::ofstream* t_stream, void* data) {
-    struct sockaddr_in* thing = (struct sockaddr_in*) data;
-    *t_stream << thing->sin_port;
-}
+void dstr_request_node(struct judo_request_node* in);
 
-void read_char_buf(std::ofstream* t_stream, void* data) {
-    char* out = (char*) data;
-    *t_stream<< out;
-}
+int32_t compare_pollfd(struct pollfd* a, struct pollfd* b) ;
+
+void dstr_pollfd(void* in);
+
+void read_ip(std::ofstream* t_stream, void* data) ;
+
+
+void read_port(std::ofstream* t_stream, void* data);
+
+
+void read_char_buf(std::ofstream* t_stream, void* data);
 
 #endif //SSL_SERVER_SSL_NODE_H
+
+

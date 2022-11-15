@@ -3,13 +3,13 @@
 //
 
 #include <stdlib.h>
-#include <mutex>
-#include <condition_variable>
+
 
 #ifndef JUDO_ENGINE_CONCURENTQUEUE_HPP
 #define JUDO_ENGINE_CONCURENTQUEUE_HPP
 
-
+#ifndef JUDO_QUEUE_NODE
+#define JUDO_QUEUE_NODE
 
 template <typename T>
 struct qnode {
@@ -18,24 +18,25 @@ struct qnode {
 
 };
 
+#endif
 
 template <typename T>
-class ConcurrentQueue {
+class Queue {
 public:
     int32_t enqueue(T*);
     T* dequeue();
     size_t getSize();
-    qnode<T>* dump(int32_t*);
-    int32_t load(qnode<T>*, qnode<T>*, const int32_t*);
-    ConcurrentQueue();
-    ~ConcurrentQueue();
+    int32_t dump(qnode<T>**, qnode<T>**);
+    int32_t load(void**, void**, const int32_t);
+    Queue(void (*dstr)(T*));
+    ~Queue();
 
 private:
     size_t m_size = 0;
     struct qnode<T>* m_head = nullptr;
     struct qnode<T>* m_tail = nullptr;
-    std::mutex m_lock;
-    std::condition_variable m_empty_sig;
+    void (*m_destr)(T*);
+
 
 
 };

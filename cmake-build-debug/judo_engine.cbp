@@ -84,10 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/squin/programming/judo_engine/ConcurrentQueue.cpp">
+		<Unit filename="/home/squin/programming/judo_engine/ConcurBlockingQueue.cpp">
 			<Option target="judo_engine"/>
 		</Unit>
-		<Unit filename="/home/squin/programming/judo_engine/ConcurrentQueue.hpp">
+		<Unit filename="/home/squin/programming/judo_engine/ConcurBlockingQueue.hpp">
 			<Option target="judo_engine"/>
 		</Unit>
 		<Unit filename="/home/squin/programming/judo_engine/DualDynamicArray.cpp">
@@ -106,6 +106,21 @@
 			<Option target="judo_engine"/>
 		</Unit>
 		<Unit filename="/home/squin/programming/judo_engine/LoggyMcLogFace.hpp">
+			<Option target="judo_engine"/>
+		</Unit>
+		<Unit filename="/home/squin/programming/judo_engine/Queue.cpp">
+			<Option target="judo_engine"/>
+		</Unit>
+		<Unit filename="/home/squin/programming/judo_engine/Queue.hpp">
+			<Option target="judo_engine"/>
+		</Unit>
+		<Unit filename="/home/squin/programming/judo_engine/ThreadPool.cpp">
+			<Option target="judo_engine"/>
+		</Unit>
+		<Unit filename="/home/squin/programming/judo_engine/ThreadPool.hpp">
+			<Option target="judo_engine"/>
+		</Unit>
+		<Unit filename="/home/squin/programming/judo_engine/ssl_node.cpp">
 			<Option target="judo_engine"/>
 		</Unit>
 		<Unit filename="/home/squin/programming/judo_engine/ssl_node.hpp">

@@ -8,10 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/squin/programming/judo_engine/ConcurrentQueue.cpp" "CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o.d"
+  "/home/squin/programming/judo_engine/ConcurBlockingQueue.cpp" "CMakeFiles/judo_engine.dir/ConcurBlockingQueue.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/ConcurBlockingQueue.cpp.o.d"
   "/home/squin/programming/judo_engine/DualDynamicArray.cpp" "CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/DualDynamicArray.cpp.o.d"
   "/home/squin/programming/judo_engine/JudoServer.cpp" "CMakeFiles/judo_engine.dir/JudoServer.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/JudoServer.cpp.o.d"
   "/home/squin/programming/judo_engine/LoggyMcLogFace.cpp" "CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o.d"
+  "/home/squin/programming/judo_engine/Queue.cpp" "CMakeFiles/judo_engine.dir/Queue.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/Queue.cpp.o.d"
+  "/home/squin/programming/judo_engine/ThreadPool.cpp" "CMakeFiles/judo_engine.dir/ThreadPool.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/ThreadPool.cpp.o.d"
+  "/home/squin/programming/judo_engine/ssl_node.cpp" "CMakeFiles/judo_engine.dir/ssl_node.cpp.o" "gcc" "CMakeFiles/judo_engine.dir/ssl_node.cpp.o.d"
   )
 
 # Targets to which this target links.

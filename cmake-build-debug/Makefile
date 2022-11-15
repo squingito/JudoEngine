@@ -129,29 +129,29 @@ judo_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/build
 .PHONY : judo_engine/fast
 
-ConcurrentQueue.o: ConcurrentQueue.cpp.o
-.PHONY : ConcurrentQueue.o
+ConcurBlockingQueue.o: ConcurBlockingQueue.cpp.o
+.PHONY : ConcurBlockingQueue.o
 
 # target to build an object file
-ConcurrentQueue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.o
-.PHONY : ConcurrentQueue.cpp.o
+ConcurBlockingQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurBlockingQueue.cpp.o
+.PHONY : ConcurBlockingQueue.cpp.o
 
-ConcurrentQueue.i: ConcurrentQueue.cpp.i
-.PHONY : ConcurrentQueue.i
+ConcurBlockingQueue.i: ConcurBlockingQueue.cpp.i
+.PHONY : ConcurBlockingQueue.i
 
 # target to preprocess a source file
-ConcurrentQueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.i
-.PHONY : ConcurrentQueue.cpp.i
+ConcurBlockingQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurBlockingQueue.cpp.i
+.PHONY : ConcurBlockingQueue.cpp.i
 
-ConcurrentQueue.s: ConcurrentQueue.cpp.s
-.PHONY : ConcurrentQueue.s
+ConcurBlockingQueue.s: ConcurBlockingQueue.cpp.s
+.PHONY : ConcurBlockingQueue.s
 
 # target to generate assembly for a file
-ConcurrentQueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurrentQueue.cpp.s
-.PHONY : ConcurrentQueue.cpp.s
+ConcurBlockingQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ConcurBlockingQueue.cpp.s
+.PHONY : ConcurBlockingQueue.cpp.s
 
 DualDynamicArray.o: DualDynamicArray.cpp.o
 .PHONY : DualDynamicArray.o
@@ -225,6 +225,78 @@ LoggyMcLogFace.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s
 .PHONY : LoggyMcLogFace.cpp.s
 
+Queue.o: Queue.cpp.o
+.PHONY : Queue.o
+
+# target to build an object file
+Queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/Queue.cpp.o
+.PHONY : Queue.cpp.o
+
+Queue.i: Queue.cpp.i
+.PHONY : Queue.i
+
+# target to preprocess a source file
+Queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/Queue.cpp.i
+.PHONY : Queue.cpp.i
+
+Queue.s: Queue.cpp.s
+.PHONY : Queue.s
+
+# target to generate assembly for a file
+Queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/Queue.cpp.s
+.PHONY : Queue.cpp.s
+
+ThreadPool.o: ThreadPool.cpp.o
+.PHONY : ThreadPool.o
+
+# target to build an object file
+ThreadPool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ThreadPool.cpp.o
+.PHONY : ThreadPool.cpp.o
+
+ThreadPool.i: ThreadPool.cpp.i
+.PHONY : ThreadPool.i
+
+# target to preprocess a source file
+ThreadPool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ThreadPool.cpp.i
+.PHONY : ThreadPool.cpp.i
+
+ThreadPool.s: ThreadPool.cpp.s
+.PHONY : ThreadPool.s
+
+# target to generate assembly for a file
+ThreadPool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ThreadPool.cpp.s
+.PHONY : ThreadPool.cpp.s
+
+ssl_node.o: ssl_node.cpp.o
+.PHONY : ssl_node.o
+
+# target to build an object file
+ssl_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ssl_node.cpp.o
+.PHONY : ssl_node.cpp.o
+
+ssl_node.i: ssl_node.cpp.i
+.PHONY : ssl_node.i
+
+# target to preprocess a source file
+ssl_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ssl_node.cpp.i
+.PHONY : ssl_node.cpp.i
+
+ssl_node.s: ssl_node.cpp.s
+.PHONY : ssl_node.s
+
+# target to generate assembly for a file
+ssl_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/ssl_node.cpp.s
+.PHONY : ssl_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,9 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... judo_engine"
-	@echo "... ConcurrentQueue.o"
-	@echo "... ConcurrentQueue.i"
-	@echo "... ConcurrentQueue.s"
+	@echo "... ConcurBlockingQueue.o"
+	@echo "... ConcurBlockingQueue.i"
+	@echo "... ConcurBlockingQueue.s"
 	@echo "... DualDynamicArray.o"
 	@echo "... DualDynamicArray.i"
 	@echo "... DualDynamicArray.s"
@@ -246,6 +318,15 @@ help:
 	@echo "... LoggyMcLogFace.o"
 	@echo "... LoggyMcLogFace.i"
 	@echo "... LoggyMcLogFace.s"
+	@echo "... Queue.o"
+	@echo "... Queue.i"
+	@echo "... Queue.s"
+	@echo "... ThreadPool.o"
+	@echo "... ThreadPool.i"
+	@echo "... ThreadPool.s"
+	@echo "... ssl_node.o"
+	@echo "... ssl_node.i"
+	@echo "... ssl_node.s"
 .PHONY : help
 
 

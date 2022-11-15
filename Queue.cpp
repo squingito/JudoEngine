@@ -5,37 +5,41 @@
 
 
 #include <iostream>
-#include "ConcurrentQueue.hpp"
+#include "Queue.hpp"
 
 template <typename T>
-ConcurrentQueue<T>::ConcurrentQueue() {
+Queue<T>::Queue(void (*dstr)(T*)) {
     m_size = 0;
     m_head = nullptr;
     m_tail = nullptr;
+    m_destr = dstr;
 }
 
 template <typename T>
-ConcurrentQueue<T>::~ConcurrentQueue() {
+Queue<T>::~Queue() {
     struct qnode<T>* current = m_head;
     struct qnode<T>* next;
     while (current != nullptr) {
+        if (m_destr != nullptr) {
+            m_destr(next->data);
+        }
         next = current->next;
+
         delete current;
         current = next;
     }
 }
 
 template <typename T>
-size_t ConcurrentQueue<T>::getSize() {
+size_t Queue<T>::getSize() {
     return m_size;
 }
 
 template <typename T>
-int32_t ConcurrentQueue<T>::enqueue(T* t_data) {
+int32_t Queue<T>::enqueue(T* t_data) {
     struct qnode<T>* new_node = new qnode<T>;
     new_node->data = t_data;
     new_node->next = nullptr;
-    std::unique_lock<std::mutex> temp_lock(m_lock);
     if (m_size == 0) {
         m_head = new_node;
         m_tail = new_node;
@@ -45,40 +49,26 @@ int32_t ConcurrentQueue<T>::enqueue(T* t_data) {
         m_tail = m_tail->next;
         m_size += 1;
     }
-    std::cout << "hedfsnhajkshfd";
-    temp_lock.unlock();
-    m_empty_sig.notify_one();
     return 0;
 }
 
 template <typename T>
-int32_t ConcurrentQueue<T>::load(qnode<T>* t_new_nodes, qnode<T>* t_new_nodes_tail, const int32_t* t_num_terms) {
-    std::unique_lock<std::mutex> temp_lock(m_lock);
-    int num_in = *t_num_terms;
-
+int32_t Queue<T>::load(void** t_new_nodes, void** t_new_nodes_tail, int32_t t_num_terms) {
+    if (t_num_terms <= 0) return -1;
     if (m_size == 0) {
-        m_head = t_new_nodes;
-        m_tail = t_new_nodes_tail;
+        m_head = *((qnode<T>**) t_new_nodes);
+        m_tail = *((qnode<T>**) t_new_nodes_tail);
     } else {
-        m_tail->next = t_new_nodes;
-        m_tail = t_new_nodes_tail;
+        m_tail->next = *((qnode<T>**) t_new_nodes);
+        m_tail = *((qnode<T>**) t_new_nodes_tail);
     }
-    m_size += num_in;
-    temp_lock.unlock();
-    for (int i = 0; i < num_in; i++) {
-        m_empty_sig.notify_one();
-    }
+    m_size += t_num_terms;
     return 0;
-
 }
 
 
 template <typename T>
-T* ConcurrentQueue<T>::dequeue() {
-    std::unique_lock<std::mutex> temp_lock(m_lock);
-    while (m_size == 0) {
-        m_empty_sig.wait(temp_lock);
-    }
+T* Queue<T>::dequeue() {
     T* data = m_head->data;
     if (m_size == 1) {
         delete m_head;
@@ -91,21 +81,22 @@ T* ConcurrentQueue<T>::dequeue() {
         delete to_del;
         m_size -= 1;
     }
-    temp_lock.unlock();
     return data;
 }
 
 template<typename T>
-qnode<T> *ConcurrentQueue<T>::dump(int32_t *) {
-    struct qnode<T>* out = m_head;
+int32_t Queue<T>::dump(qnode<T>** t_head_ptr, qnode<T>** t_tail_ptr) {
+    *t_head_ptr = m_head;
+    *t_tail_ptr = m_tail;
     m_head = nullptr;
     m_tail = nullptr;
+    int32_t size_out = m_size;
     m_size = 0;
-    return out;
+    return size_out;
 }
 /*
 int main() {
-    ConcurrentQueue<int>* a = new ConcurrentQueue<int>;
+    Queue<int>* a = new Queue<int>;
     int b = 7;
     a->enqueue(&b);
     delete a;
