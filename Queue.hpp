@@ -36,9 +36,6 @@ private:
     struct qnode<T>* m_head = nullptr;
     struct qnode<T>* m_tail = nullptr;
     void (*m_destr)(T*);
-
-
-
 };
 
 

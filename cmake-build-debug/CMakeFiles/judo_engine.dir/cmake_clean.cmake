@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/judo_engine.dir/JudoServer.cpp.o.d"
   "CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o"
   "CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.o.d"
+  "CMakeFiles/judo_engine.dir/PriorityQueue.cpp.o"
+  "CMakeFiles/judo_engine.dir/PriorityQueue.cpp.o.d"
   "CMakeFiles/judo_engine.dir/Queue.cpp.o"
   "CMakeFiles/judo_engine.dir/Queue.cpp.o.d"
   "CMakeFiles/judo_engine.dir/ThreadPool.cpp.o"

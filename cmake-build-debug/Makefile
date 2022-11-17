@@ -57,18 +57,18 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/squin/programming/judo_engine
+CMAKE_SOURCE_DIR = /mnt/c/Users/squin/programming/JudoEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/squin/programming/judo_engine/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/squin/programming/JudoEngine/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles /home/squin/programming/judo_engine/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/squin/programming/JudoEngine/cmake-build-debug/CMakeFiles /mnt/c/Users/squin/programming/JudoEngine/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/squin/programming/judo_engine/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/squin/programming/JudoEngine/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -225,6 +225,30 @@ LoggyMcLogFace.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/LoggyMcLogFace.cpp.s
 .PHONY : LoggyMcLogFace.cpp.s
 
+PriorityQueue.o: PriorityQueue.cpp.o
+.PHONY : PriorityQueue.o
+
+# target to build an object file
+PriorityQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/PriorityQueue.cpp.o
+.PHONY : PriorityQueue.cpp.o
+
+PriorityQueue.i: PriorityQueue.cpp.i
+.PHONY : PriorityQueue.i
+
+# target to preprocess a source file
+PriorityQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/PriorityQueue.cpp.i
+.PHONY : PriorityQueue.cpp.i
+
+PriorityQueue.s: PriorityQueue.cpp.s
+.PHONY : PriorityQueue.s
+
+# target to generate assembly for a file
+PriorityQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/judo_engine.dir/build.make CMakeFiles/judo_engine.dir/PriorityQueue.cpp.s
+.PHONY : PriorityQueue.cpp.s
+
 Queue.o: Queue.cpp.o
 .PHONY : Queue.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... LoggyMcLogFace.o"
 	@echo "... LoggyMcLogFace.i"
 	@echo "... LoggyMcLogFace.s"
+	@echo "... PriorityQueue.o"
+	@echo "... PriorityQueue.i"
+	@echo "... PriorityQueue.s"
 	@echo "... Queue.o"
 	@echo "... Queue.i"
 	@echo "... Queue.s"

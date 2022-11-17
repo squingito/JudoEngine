@@ -9,4 +9,4 @@ link_libraries(crypto)
 include_directories(.)
 
 add_executable(judo_engine
-        DualDynamicArray.cpp DualDynamicArray.hpp JudoServer.cpp JudoServer.hpp LoggyMcLogFace.cpp LoggyMcLogFace.hpp Queue.cpp Queue.hpp ConcurBlockingQueue.cpp ConcurBlockingQueue.hpp ThreadPool.cpp ThreadPool.hpp ssl_node.cpp ssl_node.hpp)
+        DualDynamicArray.cpp DualDynamicArray.hpp JudoServer.cpp JudoServer.hpp LoggyMcLogFace.cpp LoggyMcLogFace.hpp Queue.cpp Queue.hpp ConcurBlockingQueue.cpp ConcurBlockingQueue.hpp ThreadPool.cpp ThreadPool.hpp ssl_node.cpp ssl_node.hpp PriorityQueue.cpp PriorityQueue.h)
